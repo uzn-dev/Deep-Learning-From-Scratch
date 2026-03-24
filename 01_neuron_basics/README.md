@@ -4,16 +4,16 @@
 
 ## 📂 資料夾結構與專案說明
 
-### 1. `01_single_neuron` 
+### 1. `01_single_neuron` (專案 0.1)
 * **檔案:** `neuron_from_scratch.py`
-* **實作內容:** * 建構了最基礎的神經元數學模型：$z = w \cdot x + b$。
+* **實作內容:** * 建構了最基礎的神經元數學模型：`z = w · x + b`。
   * 理解權重（Weights）與偏差（Bias）的物理意義。
   * 實作基礎的激勵函數（Activation Function）並觀察其對輸出的非線性影響。
 
-### 2. `02_mnist_forward`
+### 2. `02_mnist_forward` (專案 0.2)
 * **檔案:** `mnist_forward_prop.py`
-* **實作內容:** * **真實數據處理:** 載入 MNIST 手寫數字資料集，實作影像資料的拉直（Flattening，$28 \times 28 \rightarrow 784$）與數值歸一化（Normalization）。
-  * **矩陣化運算:** 從單一神經元的 `for` 迴圈，升級為處理 $(Batch, Features)$ 維度的 NumPy 矩陣乘法（`X @ W + b`），大幅提升運算效率。
+* **實作內容:** * **真實數據處理:** 載入 MNIST 手寫數字資料集，實作影像資料的拉直（Flattening，`28 × 28 → 784`）與數值歸一化（Normalization）。
+  * **矩陣化運算:** 從單一神經元的 `for` 迴圈，升級為處理 `(Batch, Features)` 維度的 NumPy 矩陣乘法（`X @ W + b`），大幅提升運算效率。
   * **權重初始化:** 使用常態分佈 `np.random.randn()` 初始化權重矩陣，並理解為何不能將權重全部設為 0（打破對稱性 Symmetry Breaking）。
   * **進階激勵函數:** * 實作 **ReLU** 函數處理隱藏層的非線性特徵。
     * 實作 **Softmax** 函數將輸出層的分數轉換為機率分佈，並加入了減去最大值的處理以確保**數值穩定性（Numerical Stability）**，防止指數運算溢位（Overflow）。
